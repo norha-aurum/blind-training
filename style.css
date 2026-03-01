@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background: #000;   /* ← 黒背景 */
+  color: #fff;        /* ← 文字色を白 */
+}
+
+#app {
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  background: #222;   /* 黒背景でも見やすく */
+  color: #fff;
+  border: 1px solid #555;
+}
+
+button:hover {
+  background: #333;
+}
+
+.correct {
+  color: #00ff00;     /* 見やすい緑 */
+  font-size: 48px;
+}
+
+.wrong {
+  color: #ff3333;     /* 見やすい赤 */
+  font-size: 48px;
+}
