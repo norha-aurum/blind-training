@@ -103,8 +103,11 @@ function showResult() {
 }
 
 function startMemorization() {
-  memoEdges = generateMemoSequence("edge");
-  memoCorners = generateMemoSequence("corner");
+  const length = Math.floor(Math.random() * 7) + 10; // 10〜16（1回だけ）
+
+  memoEdges = generateMemoSequence("edge", length);
+  memoCorners = generateMemoSequence("corner", length);
+
   memoEdgeIndex = 0;
   memoCornerIndex = 0;
   memoPhase = "edge";
@@ -112,10 +115,7 @@ function startMemorization() {
   showMemoImage();
 }
 
-function generateMemoSequence(type) {
-  const length = Math.floor(Math.random() * 7) + 10; // 10〜16
-  if (length % 2 !== 0 && type === "corner") return generateMemoSequence(type);
-
+function generateMemoSequence(type, length) {
   return Array.from({ length }, () => {
     const letter = ALPHABETS[Math.floor(Math.random() * ALPHABETS.length)];
     const variant =
