@@ -27,14 +27,12 @@ img {
 }
 
 button {
-  padding: 12px;
-  font-size: 16px;
-  background: #222;   /* 黒背景でも見やすく */
+  padding: 12px 0;
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
+  background: #222;
   color: #fff;
   border: 1px solid #555;
-  width: 22%;        /* 横4個のとき余白を考慮 */
-  margin: 1%;
-  font-size: 1.5rem; /* スマホでも押しやすい大きさ */
+  width: 100%;        /* ← Gridに全幅を任せる */
 }
 
 button:hover {
@@ -62,8 +60,11 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  .buttons {
+    grid-template-columns: repeat(4, 1fr); /* そのまま */
+  }
+
   button {
-    width: 45%;  /* 横2個にしてボタンを大きく */
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
 }
