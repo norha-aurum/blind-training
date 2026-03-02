@@ -4,6 +4,8 @@ body {
   text-align: center;
   background: #000;   /* ← 黒背景 */
   color: #fff;        /* ← 文字色を白 */
+  padding: 1rem;
+  font-size: 1rem;
 }
 
 #app {
@@ -30,10 +32,19 @@ button {
   background: #222;   /* 黒背景でも見やすく */
   color: #fff;
   border: 1px solid #555;
+  width: 22%;        /* 横4個のとき余白を考慮 */
+  margin: 1%;
+  font-size: 1.5rem; /* スマホでも押しやすい大きさ */
 }
 
 button:hover {
   background: #333;
+}
+
+#button-container {
+  display: flex;
+  flex-wrap: wrap;    /* 画面幅に合わせて折り返す */
+  justify-content: center;
 }
 
 .correct {
@@ -44,4 +55,15 @@ button:hover {
 .wrong {
   color: #ff3333;     /* 見やすい赤 */
   font-size: 48px;
+}
+
+#app > div {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  button {
+    width: 45%;  /* 横2個にしてボタンを大きく */
+    font-size: 1.8rem;
+  }
 }
